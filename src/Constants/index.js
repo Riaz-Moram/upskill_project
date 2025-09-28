@@ -20,7 +20,7 @@ from "../assets/index";
 export const navLinks=[
     {
 id:"home",
-title:"home",
+title:"Home",
 
     },
 

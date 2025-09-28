@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <nav className="w-full py-6 flex justify-between items-center">
       <img src={logo} className="w-[124px] h-[32px]" alt="" />
-      <ul className="ist-none sm:flex hidden justify-end items-center flex-1">
+      <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => {
           return (
             <li
