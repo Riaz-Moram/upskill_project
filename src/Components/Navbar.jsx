@@ -1,15 +1,26 @@
-import React from "react";
-// import { navLinks } from "../Constants/index";
+import { useState } from "react";
+import { logo } from "../assets";
+import { navLinks } from "../Constants";
 export default function Navbar() {
-  // return (
-  //   <div>
-  //     {navLinks.map((links) => {
-  //       return (
-  //         <ul>
-  //           <li>{links.title}</li>
-  //         </ul>
-  //       );
-  //     })}
-  //   </div>
-  // );
+  const [active, setActive] = useState("Home");
+  return (
+    <nav className="w-full py-6 flex justify-between items-center">
+      <img src={logo} className="w-[124px] h-[32px]" alt="" />
+      <ul className="ist-none sm:flex hidden justify-end items-center flex-1">
+        {navLinks.map((nav, index) => {
+          return (
+            <li
+              key={nav.id}
+              className={`font-normal font-poppins text-[16px] cursor-pointer ${
+                active === nav.title ? "text-white" : "text-dimWhite"
+              } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
+              onClick={() => setActive(nav.title)}
+            >
+              <a href={`#${nav.id}`}>{nav.title}</a>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  );
 }
